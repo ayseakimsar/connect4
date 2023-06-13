@@ -1,0 +1,39 @@
+.score-card {
+  width: 12rem;
+  height: 14rem;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 20px;
+  box-shadow: 0 7px 0 0 black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+
+  &_svg {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    box-shadow: 0 5px 0 0 black;
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    top: -30px;
+  }
+
+  &_text {
+    margin-top: 1rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  &_value {
+    align-self: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 5rem;
+    margin-top: 0.3rem;
+  }
+}

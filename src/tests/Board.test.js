@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
-import Board from "./Board";
-import { updateBoard } from "./updateBoard";
-import { findFirstEmptyCell } from "./findFirstEmptyCell";
+import Board from "../components/Board";
+import { updateBoard } from "../functions/updateBoard";
+import { findFirstEmptyCell } from "../functions/findFirstEmptyCell";
 
 describe("Board component", () => {
   test("board is rendered without any error", () => {

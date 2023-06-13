@@ -1,0 +1,22 @@
+@import "./_color-palette";
+
+.game-icon {
+  width: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: color(player-1);
+  border-radius: 50%;
+  border: 3px solid black;
+  box-shadow: 0 2px 0 0 black;
+}
+
+.circle-2,
+.circle-3 {
+  background-color: color(player-2);
+}

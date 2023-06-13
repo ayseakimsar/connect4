@@ -1,4 +1,4 @@
-import { checkTie } from "./checkTie";
+import { checkTie } from "../functions/checkTie";
 describe("checking tie", () => {
   test("board is filled, and no winner", () => {
     const board = [

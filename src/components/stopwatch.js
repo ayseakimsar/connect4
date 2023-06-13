@@ -1,13 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
+import "../scss/timer.scss";
 
 export default function Stopwatch({ changeTurn, player, board, winner }) {
   // console.log("stopwatch", board);
   const Ref = useRef(null);
-  const [timer, setTimer] = useState("03");
+  const [timer, setTimer] = useState("30");
 
   const getDeadTime = () => {
     let deadline = new Date();
-    deadline.setSeconds(deadline.getSeconds() + 3);
+    deadline.setSeconds(deadline.getSeconds() + 30);
     return deadline;
   };
 
@@ -34,7 +35,7 @@ export default function Stopwatch({ changeTurn, player, board, winner }) {
   const clearTimer = (e) => {
     // console.log("clearTimer", board);
 
-    setTimer("03");
+    setTimer("30");
     if (Ref.current) clearInterval(Ref.current);
     const id = setInterval(() => {
       startTimer(e);
@@ -53,9 +54,12 @@ export default function Stopwatch({ changeTurn, player, board, winner }) {
     clearTimer(getDeadTime());
   }, [player]);
 
-  return (
-    <div className="App">
-      <h2>{timer}</h2>
-    </div>
-  );
+  useEffect(() => {
+    if (winner === 1 || winner === 2) {
+      setTimer("00");
+      if (Ref.current) clearInterval(Ref.current);
+    }
+  }, [winner]);
+
+  return <div className="timer">{timer}s</div>;
 }
